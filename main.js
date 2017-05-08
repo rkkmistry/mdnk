@@ -1,4 +1,29 @@
 function draw() {
+  $('main').html('');
+  var num_cards = $('#num-cards').val();
+
+  for (var step = 0; step < num_cards; step++) {
+    idx = selectSuit();
+
+    if (idx == 0) {
+      $('main').append("<p class='card'>"+majors[getRandomInt(0, majors.length)]+"</p>");
+    }
+
+    if (idx == 1) {
+      $('main').append("<p class='card-center'>"+diamonds[getRandomInt(0, diamonds.length)]+"</p>");
+    }
+
+    if (idx == 2) {
+      $('main').append("<p class='card'>"+nights[getRandomInt(0, nights.length)]+"</p>");
+    }
+
+    if (idx == 3) {
+      $('main').append("<p class='card-center'>"+knives[getRandomInt(0, knives.length)]+"</p>");
+    }
+  }
+}
+
+function selectSuit() {
   var probs = [];
   var idx;
 
@@ -23,30 +48,8 @@ function draw() {
     probs.push('3');
   }
 
-  console.log(probs);
   idx = probs[getRandomInt(0, probs.length)];
-  console.log(idx);
-
-  if (idx == 0) {
-    
-    $('main').html("<p id='card'>"+majors[getRandomInt(0, majors.length)]+"</p>");
-  }
-
-  if (idx == 1) {
-    
-    $('main').html("<p id='card'>"+diamonds[getRandomInt(0, diamonds.length)]+"</p>");
-  }
-
-  if (idx == 2) {
-
-    $('main').html("<p id='card'>"+nights[getRandomInt(0, nights.length)]+"</p>");
-  }
-
-  if (idx == 3) {
-
-    $('main').html("<p id='card'>"+knives[getRandomInt(0, knives.length)]+"</p>");
-  }
-
+  return idx;
 }
 
 function getRandomInt(min, max) {
