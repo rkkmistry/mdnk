@@ -1,27 +1,54 @@
+var row = `<div class="row" style="display:none;">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>`;
+
+var count = 0;
+
 function draw() {
-  $('main').html('');
-  var num_cards = $('#num-cards').val();
+  count+=4;
+  console.log(count);
 
-  for (var step = 0; step < num_cards; step++) {
-    idx = selectSuit();
-
-    if (idx == 0) {
-      $('main').append("<p class='card'>"+majors[getRandomInt(0, majors.length)]+"</p>");
-    }
-
-    if (idx == 1) {
-      $('main').append("<p class='card-center'>"+diamonds[getRandomInt(0, diamonds.length)]+"</p>");
-    }
-
-    if (idx == 2) {
-      $('main').append("<p class='card'>"+nights[getRandomInt(0, nights.length)]+"</p>");
-    }
-
-    if (idx == 3) {
-      $('main').append("<p class='card-center'>"+knives[getRandomInt(0, knives.length)]+"</p>");
-    }
+  if (count==52) {
+    return;
   }
+
+  $('main').append(row);
+  $('.row:last').fadeIn(1200, function(){
+
+
+  });
+  $('.row:last .card').each(function() {
+    $(this).data('clicked', false);
+  });
 }
+
+draw();
+
+$("main").on('click', '.card', function() {
+  if ($(this).data('clicked')) {
+    return;
+  }
+  var text = deck[getRandomInt(0, deck.length)];
+  deck.pop(text);
+  $(this).html(text);
+  $(this).css('background', 'none');
+  $(this).css('background-color', 'white');
+  $(this).data('clicked', true);
+
+  var hold = 0;
+  $(this).siblings().each(function() {
+    if ($(this).data('clicked')) {
+      hold++
+    }
+
+    if (hold == 3) {
+      draw();
+    }
+  });
+});
 
 function selectSuit() {
   var probs = [];

@@ -1,14 +1,33 @@
 body {
   background-color: black;
-  color: white;
   font-family: sans-serif;
 }
 
 main {
+  width: 95%;
+  margin: 50px auto;
+}
+
+.row {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+.card {
+  flex-basis: 20%;
+  margin: 20px;
+  font-family: 'Inknut Antiqua', serif;
+  line-height: 1.1em;
+  padding: 20px;
+  height: 300px;
+  text-align: center;
+  border: 6px solid white;
+  background: url('ghost.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
 }
 
 #controls {
@@ -19,15 +38,6 @@ main {
   padding: 20px;
   bottom: 0; 
   background-color: gray;
-}
-
-.card {
-  font-family: 'Inknut Antiqua', serif;
-  text-align: justify;
-  font-size: 1.2em;
-  line-height: 1.25em;
-  width: 300px;
-  padding: 20px;
 }
 
 .card-center {
@@ -54,7 +64,7 @@ input {
   margin-right: 15px;
 }
 
-.suit {
+/*.suit {
   display: block;
   text-align: center;
-}
+}*/

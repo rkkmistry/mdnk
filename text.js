@@ -61,3 +61,5 @@ knife9 = `<span class='suit'>†††††††††</span><br>is wet is war
 knife10 = `<span class='suit'>††††††††††</span><br>and the milk is sweet gold as the hilt<br>wclasse open<br>`;
 
 knives = [knife1, knife2, knife3, knife4, knife5, knife6, knife7, knife8, knife9, knife10];
+
+deck = [major1, major2, major3, major4, major5, major6, major7, major8, major9, major10, major11, major12, major13, major14, major15, major16, major17, major18, major19, major20, major21, major22, diamond1, diamond2, diamond3, diamond4, diamond5, diamond6, diamond7, diamond8, diamond9, diamond10, night1, night2, night3, night4, night5, night6, night7, night8, night9, night10, knife1, knife2, knife3, knife4, knife5, knife6, knife7, knife8, knife9, knife10]
