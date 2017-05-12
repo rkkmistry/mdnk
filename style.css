@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: sans-serif;
+  font-family: 'Inknut Antiqua', serif;
 }
 
 main {
@@ -16,55 +16,68 @@ main {
 }
 
 .card {
+  font-size: 1.1vw;
   flex-basis: 20%;
-  margin: 20px;
-  font-family: 'Inknut Antiqua', serif;
-  line-height: 1.1em;
-  padding: 20px;
-  height: 350px;
-  text-align: center;
+  margin: 15px;
+  line-height: 1.7em;
+  padding: 15px;
+  height: 45vh;
   border: 6px solid white;
   background: url('ghost.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 5px;
+  letter-spacing: -1px;
 }
 
-#controls {
-  position: fixed;
-  width: 100%; 
-  z-index: 1;
-  text-align: center;
-  padding: 20px;
-  bottom: 0; 
-  background-color: gray;
-}
-
-.card-center {
-  font-family: 'Inknut Antiqua', serif;
-  text-align: center;
-  font-size: 1.2em;
-  line-height: 1.25em;
-  width: 300px;
-  padding: 20px;
-}
-
-button {
-  margin-left: 20px;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  color: white;
-  background-color: maroon;
-  height: 100%;
-}
-
-input {
-  margin-right: 15px;
-}
-
-/*.suit {
-  display: block;
-  text-align: center;
+/*test styles*/
+/*.card-test {
+  font-size: 1.2vw;
+  flex-basis: 20%;
+  margin: 15px;
+  line-height: 1.7em;
+  padding: 15px;
+  height: 350px;
+  border: 6px solid white;
+  background-color: white;
+  border-radius: 5px;
+  letter-spacing: -1px;
 }*/
+
+.title {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.major {
+  text-align: justify;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+/*Mobile Stylings*/
+@media only screen and (max-width: 760px) {
+  main {
+    margin-top: 10px;
+  }
+
+  .row {
+    display: block;
+    width: 100%;
+  }
+
+  .card {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    font-size: 1em;
+    height: 60vh;
+  }
+}

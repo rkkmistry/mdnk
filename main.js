@@ -9,17 +9,12 @@ var count = 0;
 
 function draw() {
   count+=4;
-  console.log(count);
-
-  if (count==52) {
+  if (count>52) {
     return;
   }
 
   $('main').append(row);
-  $('.row:last').fadeIn(1200, function(){
-
-
-  });
+  $('.row:last').fadeIn(1200, function(){});
   $('.row:last .card').each(function() {
     $(this).data('clicked', false);
   });
@@ -27,12 +22,34 @@ function draw() {
 
 draw();
 
+document.addEventListener("touchstart", touch, true);
+function touch() {
+  snowstorm.play();
+  avril.play();
+  if (notStarted) {
+    setTimeout(function(){
+      placeText();
+    }, 1000);
+    $('header').fadeOut(1000);
+      notStarted = false;
+    } else {
+      placeText();
+    }
+}
+
+//test function 
+// Mousetrap.bind('a', function() { 
+//   $('main').append("<div class='row'><div class='card-test'>"+knives2+"</div></div>");
+// });
+
 $("main").on('click', '.card', function() {
   if ($(this).data('clicked')) {
     return;
   }
-  var text = deck[getRandomInt(0, deck.length)];
-  deck.pop(text);
+  var index = getRandomInt(0, deck.length);
+  var text = deck[index];
+  deck.splice(index, 1);
+
   $(this).html(text);
   $(this).css('background', 'none');
   $(this).css('background-color', 'white');
@@ -49,35 +66,6 @@ $("main").on('click', '.card', function() {
     }
   });
 });
-
-function selectSuit() {
-  var probs = [];
-  var idx;
-
-  var majors_value = Number(document.getElementById('majors-value').value);
-  var diamonds_value = Number(document.getElementById('diamonds-value').value);
-  var nights_value = Number(document.getElementById('nights-value').value);
-  var knives_value = Number(document.getElementById('knives-value').value);
-
-  for (step = 0; step < majors_value; step++) {
-    probs.push('0');
-  }
-
-  for (step = 0; step < diamonds_value; step++) {
-    probs.push('1');
-  }
-
-  for (step = 0; step < nights_value; step++) {
-    probs.push('2');
-  }
-
-  for (step = 0; step < knives_value; step++) {
-    probs.push('3');
-  }
-
-  idx = probs[getRandomInt(0, probs.length)];
-  return idx;
-}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
