@@ -7,9 +7,22 @@ var row = `<div class="row" style="display:none;">
 
 var count = 0;
 
+var start = false;
+
+$(document).click(function(){
+  if (start == false) {
+   $('header').fadeOut(1000);
+    setTimeout(function(){
+      draw();
+    }, 1000);
+    start = true;
+  }
+});
+
 function draw() {
   count+=4;
   if (count>52) {
+    $('footer').fadeIn(1000);
     return;
   }
 
@@ -19,8 +32,6 @@ function draw() {
     $(this).data('clicked', false);
   });
 }
-
-draw();
 
 document.addEventListener("touchstart", touch, true);
 function touch() {
@@ -57,6 +68,7 @@ $("main").on('click', '.card', function() {
 
   var hold = 0;
   $(this).siblings().each(function() {
+    console.log(hold);
     if ($(this).data('clicked')) {
       hold++
     }

@@ -1,6 +1,29 @@
 body {
   background-color: black;
   font-family: 'Inknut Antiqua', serif;
+  color: white;
+}
+
+header {
+  width: 40%;
+  margin: 50px auto;
+}
+
+footer {
+  display: none;
+  width: 50%;
+  margin: 70px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 25px 0;
+  line-height: 1.5;
+}
+
+p {
+  margin: 15px 0;
 }
 
 main {
@@ -16,6 +39,7 @@ main {
 }
 
 .card {
+  color: black;
   font-size: 1.1vw;
   flex-basis: 20%;
   margin: 15px;
@@ -28,6 +52,7 @@ main {
   background-position: center;
   border-radius: 5px;
   letter-spacing: -1px;
+  hyphens: auto;
 }
 
 /*test styles*/
