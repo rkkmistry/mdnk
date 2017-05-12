@@ -45,11 +45,6 @@ function draw() {
   });
 }
 
-//test function 
-// Mousetrap.bind('a', function() { 
-//   $('main').append("<div class='row'><div class='card-test'>"+knives2+"</div></div>");
-// });
-
 $("main").on('click', '.card', function() {
   if ($(this).data('clicked')) {
     return;
