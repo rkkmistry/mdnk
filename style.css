@@ -100,12 +100,13 @@ main {
   }
 
   h1 {
-    font-style: 3em;
+    font-style: 2em;
   }
 
   footer {
     margin: 30px auto;
     width: 90%;
+    line-height: 1.2em;
   }
 
   .row {
