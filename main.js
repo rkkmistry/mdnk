@@ -19,6 +19,18 @@ $(document).click(function(){
   }
 });
 
+document.addEventListener("touchstart", touch, true);
+
+function touch() {
+  if (start == false) {
+   $('header').fadeOut(1000);
+    setTimeout(function(){
+      draw();
+    }, 1000);
+    start = true;
+  }
+}
+
 function draw() {
   count+=4;
   if (count>52) {

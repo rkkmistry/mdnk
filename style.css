@@ -94,6 +94,16 @@ main {
     margin-top: 10px;
   }
 
+  header {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  footer {
+    width: 90%;
+    margin: 30px auto;
+  }
+
   .row {
     display: block;
     width: 100%;
