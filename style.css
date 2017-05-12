@@ -99,6 +99,10 @@ main {
     margin: 20px auto;
   }
 
+  h1 {
+    font-style: 3em;
+  }
+
   footer {
     margin: 30px auto;
     width: 90%;

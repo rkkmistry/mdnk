@@ -45,21 +45,6 @@ function draw() {
   });
 }
 
-document.addEventListener("touchstart", touch, true);
-function touch() {
-  snowstorm.play();
-  avril.play();
-  if (notStarted) {
-    setTimeout(function(){
-      placeText();
-    }, 1000);
-    $('header').fadeOut(1000);
-      notStarted = false;
-    } else {
-      placeText();
-    }
-}
-
 //test function 
 // Mousetrap.bind('a', function() { 
 //   $('main').append("<div class='row'><div class='card-test'>"+knives2+"</div></div>");
