@@ -46,13 +46,14 @@ main {
   line-height: 1.7em;
   padding: 15px;
   height: 45vh;
-  border: 6px solid white;
-  background: url('ghost.jpg');
+  border: 5px solid white;
+  background: url('tarot-black.png');
   background-size: cover;
   background-position: center;
-  border-radius: 5px;
+  border-radius: 10px;
   letter-spacing: -1px;
   hyphens: auto;
+  box-shadow: 0px 3px 10px gray;
 }
 
 /*test styles*/
