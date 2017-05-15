@@ -63,6 +63,7 @@ main {
   letter-spacing: -1px;
   hyphens: auto;
   box-shadow: 0px 3px 10px gray;
+  cursor: pointer;
 }
 
 .title {
